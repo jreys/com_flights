@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="install">
+	<name>com_flights</name>
+	<creationDate>April 2016</creationDate>
+	<author>João Reys Santos</author>
+	<authorEmail>je_reyssantos@msn.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright></copyright>
+	<license></license>
+	<version>1.0.0</version>
+	<description>COM_FLIGHTS_DESCRIPTION</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+	</update>
+	
+	<administration>
+		<menu link="index.php?option=com_flights">Flights</menu>
+		<submenu>
+			<menu link="option=com_flights&amp;view=airports">COM_FLIGHTS_SUBMENU_AIRPORTS</menu>
+			<menu link="option=com_flights&amp;view=flights">COM_FLIGHTS_SUBMENU_FLIGHTS</menu>
+			<menu link="option=com_flights&amp;view=bookings">COM_FLIGHTS_SUBMENU_BOOKINGS</menu>
+		</submenu>
+
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>flights.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>sql</folder>
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_flights.ini</language>
+			<language tag="en-GB">language/en-GB.com_flights.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>
